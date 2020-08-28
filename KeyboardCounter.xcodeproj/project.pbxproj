@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		21013E0A24E6761A00EA8305 /* FCounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21013E0924E6761A00EA8305 /* FCounterModel.swift */; };
+		21013E2824E6B2A400EA8305 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21013E2724E6B2A400EA8305 /* MainMenu.xib */; };
+		2132B39B24E52048001D9624 /* FKeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2132B39A24E52048001D9624 /* FKeyboardViewModel.swift */; };
+		2188DCA224E4F0370002194A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2188DCA124E4F0370002194A /* AppDelegate.swift */; };
+		2188DCA624E4F0380002194A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2188DCA524E4F0380002194A /* Assets.xcassets */; };
+		2188DCA924E4F0380002194A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2188DCA824E4F0380002194A /* Preview Assets.xcassets */; };
+		6AF52E1DDDE4FBC6A3F98161 /* libPods-KeyboardCounter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 646DE8871A7BF86C9B1286C1 /* libPods-KeyboardCounter.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		21013E0924E6761A00EA8305 /* FCounterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCounterModel.swift; sourceTree = "<group>"; };
+		21013E2724E6B2A400EA8305 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		2132B39A24E52048001D9624 /* FKeyboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FKeyboardViewModel.swift; sourceTree = "<group>"; };
+		2188DC9E24E4F0370002194A /* KeyboardCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyboardCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2188DCA124E4F0370002194A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2188DCA524E4F0380002194A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2188DCA824E4F0380002194A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2188DCAD24E4F0380002194A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2188DCAE24E4F0380002194A /* KeyboardCounter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardCounter.entitlements; sourceTree = "<group>"; };
+		38531ED5BC31413B9AAA959C /* Pods-KeyboardCounter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardCounter.release.xcconfig"; path = "Target Support Files/Pods-KeyboardCounter/Pods-KeyboardCounter.release.xcconfig"; sourceTree = "<group>"; };
+		646DE8871A7BF86C9B1286C1 /* libPods-KeyboardCounter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KeyboardCounter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97513F4D4A0DE20740A311E3 /* Pods-KeyboardCounter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardCounter.debug.xcconfig"; path = "Target Support Files/Pods-KeyboardCounter/Pods-KeyboardCounter.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2188DC9B24E4F0370002194A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AF52E1DDDE4FBC6A3F98161 /* libPods-KeyboardCounter.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		17E48EDBB28D35C1ABA88EE1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				97513F4D4A0DE20740A311E3 /* Pods-KeyboardCounter.debug.xcconfig */,
+				38531ED5BC31413B9AAA959C /* Pods-KeyboardCounter.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		21013E2924E6C63400EA8305 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				21013E2A24E6C67600EA8305 /* Counter */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		21013E2A24E6C67600EA8305 /* Counter */ = {
+			isa = PBXGroup;
+			children = (
+				21013E2C24E6C68900EA8305 /* Model */,
+				21013E2B24E6C67F00EA8305 /* ViewModel */,
+			);
+			path = Counter;
+			sourceTree = "<group>";
+		};
+		21013E2B24E6C67F00EA8305 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2132B39A24E52048001D9624 /* FKeyboardViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		21013E2C24E6C68900EA8305 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				21013E0924E6761A00EA8305 /* FCounterModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2188DC9524E4F0370002194A = {
+			isa = PBXGroup;
+			children = (
+				2188DCA024E4F0370002194A /* KeyboardCounter */,
+				2188DC9F24E4F0370002194A /* Products */,
+				17E48EDBB28D35C1ABA88EE1 /* Pods */,
+				39CC27BFB0ADAE2210931F64 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2188DC9F24E4F0370002194A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2188DC9E24E4F0370002194A /* KeyboardCounter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2188DCA024E4F0370002194A /* KeyboardCounter */ = {
+			isa = PBXGroup;
+			children = (
+				2188DCA124E4F0370002194A /* AppDelegate.swift */,
+				21013E2924E6C63400EA8305 /* Module */,
+				2188DCA524E4F0380002194A /* Assets.xcassets */,
+				21013E2724E6B2A400EA8305 /* MainMenu.xib */,
+				2188DCAD24E4F0380002194A /* Info.plist */,
+				2188DCAE24E4F0380002194A /* KeyboardCounter.entitlements */,
+				2188DCA724E4F0380002194A /* Preview Content */,
+			);
+			path = KeyboardCounter;
+			sourceTree = "<group>";
+		};
+		2188DCA724E4F0380002194A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2188DCA824E4F0380002194A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		39CC27BFB0ADAE2210931F64 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				646DE8871A7BF86C9B1286C1 /* libPods-KeyboardCounter.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2188DC9D24E4F0370002194A /* KeyboardCounter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2188DCB124E4F0380002194A /* Build configuration list for PBXNativeTarget "KeyboardCounter" */;
+			buildPhases = (
+				C6E6ADF6C460D8BEE0366CC0 /* [CP] Check Pods Manifest.lock */,
+				2188DC9A24E4F0370002194A /* Sources */,
+				2188DC9B24E4F0370002194A /* Frameworks */,
+				2188DC9C24E4F0370002194A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KeyboardCounter;
+			productName = KeyboardCounter;
+			productReference = 2188DC9E24E4F0370002194A /* KeyboardCounter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2188DC9624E4F0370002194A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					2188DC9D24E4F0370002194A = {
+						CreatedOnToolsVersion = 12.0;
+					};
+				};
+			};
+			buildConfigurationList = 2188DC9924E4F0370002194A /* Build configuration list for PBXProject "KeyboardCounter" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2188DC9524E4F0370002194A;
+			productRefGroup = 2188DC9F24E4F0370002194A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2188DC9D24E4F0370002194A /* KeyboardCounter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2188DC9C24E4F0370002194A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21013E2824E6B2A400EA8305 /* MainMenu.xib in Resources */,
+				2188DCA924E4F0380002194A /* Preview Assets.xcassets in Resources */,
+				2188DCA624E4F0380002194A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C6E6ADF6C460D8BEE0366CC0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KeyboardCounter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2188DC9A24E4F0370002194A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21013E0A24E6761A00EA8305 /* FCounterModel.swift in Sources */,
+				2132B39B24E52048001D9624 /* FKeyboardViewModel.swift in Sources */,
+				2188DCA224E4F0370002194A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2188DCAF24E4F0380002194A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2188DCB024E4F0380002194A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		2188DCB224E4F0380002194A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97513F4D4A0DE20740A311E3 /* Pods-KeyboardCounter.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = KeyboardCounter/KeyboardCounter.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"KeyboardCounter/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = KeyboardCounter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.KeyboardCounter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2188DCB324E4F0380002194A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38531ED5BC31413B9AAA959C /* Pods-KeyboardCounter.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = KeyboardCounter/KeyboardCounter.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"KeyboardCounter/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = KeyboardCounter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.KeyboardCounter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2188DC9924E4F0370002194A /* Build configuration list for PBXProject "KeyboardCounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2188DCAF24E4F0380002194A /* Debug */,
+				2188DCB024E4F0380002194A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2188DCB124E4F0380002194A /* Build configuration list for PBXNativeTarget "KeyboardCounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2188DCB224E4F0380002194A /* Debug */,
+				2188DCB324E4F0380002194A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2188DC9624E4F0370002194A /* Project object */;
+}

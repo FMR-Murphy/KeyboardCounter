@@ -1,0 +1,6 @@
+module Pods_KeyboardCounter {
+  umbrella header "Pods-KeyboardCounter-umbrella.h"
+
+  export *
+  module * { export * }
+}
