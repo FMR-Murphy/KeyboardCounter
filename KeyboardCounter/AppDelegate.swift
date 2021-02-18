@@ -15,9 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var window: NSWindow!
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Create the SwiftUI view that provides the window contents.
-//        _ = ContentView(str: "12")
-
+        
         // Create the window and set the content view.
 //        window = NSWindow(
 //            contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
@@ -28,12 +26,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //        window.setFrameAutosaveName("Main Window")
 //        window.contentView = NSHostingView(rootView: contentView)
 //        window.makeKeyAndOrderFront(nil)
+
+        var components = (Bundle.main.bundlePath as NSString).pathComponents as NSArray
+        components = components.subarray(with: NSMakeRange(0, components.count - 4)) as NSArray
         
-        
-        
-        
-//       _ = FKeyboardViewModel()
-        
+        let path = NSString.path(withComponents: components as! [String])
+        NSWorkspace.shared.launchApplication(path)
+        NSApp.terminate(nil)
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {

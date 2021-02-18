@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17154" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17156" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17156"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication"/>
@@ -11,13 +11,17 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <customObject id="Hbd-ms-bi5" customClass="FKeyboardViewModel" customModule="KeyboardCounter" customModuleProvider="target">
             <connections>
+                <outlet property="startItem" destination="rua-nR-XKA" id="eQ6-Go-PxE"/>
                 <outlet property="statusMenu" destination="9zs-pW-6p9" id="jer-fJ-alG"/>
             </connections>
         </customObject>
         <menu id="9zs-pW-6p9">
             <items>
-                <menuItem title="Item 1" id="rua-nR-XKA">
+                <menuItem title="开机启动" state="on" id="rua-nR-XKA">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="startupItemClick:" target="Hbd-ms-bi5" id="R8M-99-S7h"/>
+                    </connections>
                 </menuItem>
                 <menuItem title="Clear" id="gqP-zh-EIw">
                     <modifierMask key="keyEquivalentModifierMask"/>

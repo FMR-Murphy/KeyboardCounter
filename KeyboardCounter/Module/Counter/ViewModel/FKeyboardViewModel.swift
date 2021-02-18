@@ -8,6 +8,7 @@
 import Cocoa
 import RxSwift
 import RxCocoa
+import ServiceManagement
 
 let totalCountKey = "totalCountKey"
 let mouseCountKey = "mouseCountKey"
@@ -15,6 +16,7 @@ let mouseCountKey = "mouseCountKey"
 class FKeyboardViewModel: NSObject {
 
     @IBOutlet var statusMenu: NSMenu!
+    @IBOutlet weak var startItem: NSMenuItem!
     
     
     @objc dynamic var count: Int = 0
@@ -162,6 +164,26 @@ class FKeyboardViewModel: NSObject {
         } else {
             super .observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
         }
+    }
+    
+    @IBAction func startupItemClick(_ sender: NSMenuItem) {
+        let open = sender.state != .on
+        
+        let launcherAppIdentifier = "com.example.KeyboardHelper"
+
+        if SMLoginItemSetEnabled(launcherAppIdentifier as CFString, open) {
+            if open {
+                print("添加登录项成功")
+                sender.state = .on
+            } else {
+                print("移除登录项成功")
+                sender.state = .off
+            }
+        } else {
+            print("添加登录项失败")
+        }
+
+        
     }
     
     @IBAction func clearCacheData(_ sender: Any) {

@@ -10,16 +10,46 @@
 		21013E0A24E6761A00EA8305 /* FCounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21013E0924E6761A00EA8305 /* FCounterModel.swift */; };
 		21013E2824E6B2A400EA8305 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21013E2724E6B2A400EA8305 /* MainMenu.xib */; };
 		2132B39B24E52048001D9624 /* FKeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2132B39A24E52048001D9624 /* FKeyboardViewModel.swift */; };
+		214FB3602514B267001FE429 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 214FB35F2514B267001FE429 /* AppDelegate.m */; };
+		214FB3632514B267001FE429 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214FB3622514B267001FE429 /* ViewController.m */; };
+		214FB3652514B268001FE429 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 214FB3642514B268001FE429 /* Assets.xcassets */; };
+		214FB3682514B268001FE429 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 214FB3662514B268001FE429 /* Main.storyboard */; };
+		214FB36B2514B268001FE429 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 214FB36A2514B268001FE429 /* main.m */; };
+		214FB3732514B359001FE429 /* KeyboardHelper.app in Copy Files */ = {isa = PBXBuildFile; fileRef = 214FB35C2514B267001FE429 /* KeyboardHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2188DCA224E4F0370002194A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2188DCA124E4F0370002194A /* AppDelegate.swift */; };
 		2188DCA624E4F0380002194A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2188DCA524E4F0380002194A /* Assets.xcassets */; };
 		2188DCA924E4F0380002194A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2188DCA824E4F0380002194A /* Preview Assets.xcassets */; };
 		6AF52E1DDDE4FBC6A3F98161 /* libPods-KeyboardCounter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 646DE8871A7BF86C9B1286C1 /* libPods-KeyboardCounter.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		214FB3722514B306001FE429 /* Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				214FB3732514B359001FE429 /* KeyboardHelper.app in Copy Files */,
+			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		21013E0924E6761A00EA8305 /* FCounterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCounterModel.swift; sourceTree = "<group>"; };
 		21013E2724E6B2A400EA8305 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		2132B39A24E52048001D9624 /* FKeyboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FKeyboardViewModel.swift; sourceTree = "<group>"; };
+		214FB35C2514B267001FE429 /* KeyboardHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyboardHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		214FB35E2514B267001FE429 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		214FB35F2514B267001FE429 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		214FB3612514B267001FE429 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		214FB3622514B267001FE429 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		214FB3642514B268001FE429 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		214FB3672514B268001FE429 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		214FB3692514B268001FE429 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		214FB36A2514B268001FE429 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		214FB36C2514B268001FE429 /* KeyboardHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardHelper.entitlements; sourceTree = "<group>"; };
 		2188DC9E24E4F0370002194A /* KeyboardCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyboardCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2188DCA124E4F0370002194A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2188DCA524E4F0380002194A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -32,6 +62,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		214FB3592514B267001FE429 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2188DC9B24E4F0370002194A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -85,10 +122,27 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		214FB35D2514B267001FE429 /* KeyboardHelper */ = {
+			isa = PBXGroup;
+			children = (
+				214FB35E2514B267001FE429 /* AppDelegate.h */,
+				214FB35F2514B267001FE429 /* AppDelegate.m */,
+				214FB3612514B267001FE429 /* ViewController.h */,
+				214FB3622514B267001FE429 /* ViewController.m */,
+				214FB3642514B268001FE429 /* Assets.xcassets */,
+				214FB3662514B268001FE429 /* Main.storyboard */,
+				214FB3692514B268001FE429 /* Info.plist */,
+				214FB36A2514B268001FE429 /* main.m */,
+				214FB36C2514B268001FE429 /* KeyboardHelper.entitlements */,
+			);
+			path = KeyboardHelper;
+			sourceTree = "<group>";
+		};
 		2188DC9524E4F0370002194A = {
 			isa = PBXGroup;
 			children = (
 				2188DCA024E4F0370002194A /* KeyboardCounter */,
+				214FB35D2514B267001FE429 /* KeyboardHelper */,
 				2188DC9F24E4F0370002194A /* Products */,
 				17E48EDBB28D35C1ABA88EE1 /* Pods */,
 				39CC27BFB0ADAE2210931F64 /* Frameworks */,
@@ -99,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				2188DC9E24E4F0370002194A /* KeyboardCounter.app */,
+				214FB35C2514B267001FE429 /* KeyboardHelper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,6 +191,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		214FB35B2514B267001FE429 /* KeyboardHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 214FB36F2514B268001FE429 /* Build configuration list for PBXNativeTarget "KeyboardHelper" */;
+			buildPhases = (
+				214FB3582514B267001FE429 /* Sources */,
+				214FB3592514B267001FE429 /* Frameworks */,
+				214FB35A2514B267001FE429 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KeyboardHelper;
+			productName = KeyboardHelper;
+			productReference = 214FB35C2514B267001FE429 /* KeyboardHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
 		2188DC9D24E4F0370002194A /* KeyboardCounter */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2188DCB124E4F0380002194A /* Build configuration list for PBXNativeTarget "KeyboardCounter" */;
@@ -144,6 +216,7 @@
 				2188DC9A24E4F0370002194A /* Sources */,
 				2188DC9B24E4F0370002194A /* Frameworks */,
 				2188DC9C24E4F0370002194A /* Resources */,
+				214FB3722514B306001FE429 /* Copy Files */,
 			);
 			buildRules = (
 			);
@@ -163,6 +236,9 @@
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
+					214FB35B2514B267001FE429 = {
+						CreatedOnToolsVersion = 12.0;
+					};
 					2188DC9D24E4F0370002194A = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -182,11 +258,21 @@
 			projectRoot = "";
 			targets = (
 				2188DC9D24E4F0370002194A /* KeyboardCounter */,
+				214FB35B2514B267001FE429 /* KeyboardHelper */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		214FB35A2514B267001FE429 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				214FB3652514B268001FE429 /* Assets.xcassets in Resources */,
+				214FB3682514B268001FE429 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2188DC9C24E4F0370002194A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -225,6 +311,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		214FB3582514B267001FE429 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				214FB3632514B267001FE429 /* ViewController.m in Sources */,
+				214FB36B2514B268001FE429 /* main.m in Sources */,
+				214FB3602514B267001FE429 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2188DC9A24E4F0370002194A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -237,7 +333,58 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		214FB3662514B268001FE429 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				214FB3672514B268001FE429 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		214FB36D2514B268001FE429 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = KeyboardHelper/KeyboardHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = KeyboardHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.KeyboardHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		214FB36E2514B268001FE429 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = KeyboardHelper/KeyboardHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = KeyboardHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.KeyboardHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		2188DCAF24E4F0380002194A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -402,6 +549,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		214FB36F2514B268001FE429 /* Build configuration list for PBXNativeTarget "KeyboardHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				214FB36D2514B268001FE429 /* Debug */,
+				214FB36E2514B268001FE429 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2188DC9924E4F0370002194A /* Build configuration list for PBXProject "KeyboardCounter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
