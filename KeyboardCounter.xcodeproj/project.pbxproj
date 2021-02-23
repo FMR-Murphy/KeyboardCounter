@@ -19,6 +19,8 @@
 		2188DCA224E4F0370002194A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2188DCA124E4F0370002194A /* AppDelegate.swift */; };
 		2188DCA624E4F0380002194A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2188DCA524E4F0380002194A /* Assets.xcassets */; };
 		2188DCA924E4F0380002194A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2188DCA824E4F0380002194A /* Preview Assets.xcassets */; };
+		21EE917925E1484300EDD3B7 /* FKeyboardMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EE917825E1484300EDD3B7 /* FKeyboardMenuView.swift */; };
+		21EE919625E3958F00EDD3B7 /* FDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EE919525E3958F00EDD3B7 /* FDatabaseManager.swift */; };
 		6AF52E1DDDE4FBC6A3F98161 /* libPods-KeyboardCounter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 646DE8871A7BF86C9B1286C1 /* libPods-KeyboardCounter.a */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,9 @@
 		2188DCA824E4F0380002194A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2188DCAD24E4F0380002194A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2188DCAE24E4F0380002194A /* KeyboardCounter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardCounter.entitlements; sourceTree = "<group>"; };
+		21EE913925DE92CB00EDD3B7 /* KeyboardCounter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyboardCounter-Bridging-Header.h"; sourceTree = "<group>"; };
+		21EE917825E1484300EDD3B7 /* FKeyboardMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FKeyboardMenuView.swift; sourceTree = "<group>"; };
+		21EE919525E3958F00EDD3B7 /* FDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDatabaseManager.swift; sourceTree = "<group>"; };
 		38531ED5BC31413B9AAA959C /* Pods-KeyboardCounter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardCounter.release.xcconfig"; path = "Target Support Files/Pods-KeyboardCounter/Pods-KeyboardCounter.release.xcconfig"; sourceTree = "<group>"; };
 		646DE8871A7BF86C9B1286C1 /* libPods-KeyboardCounter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KeyboardCounter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97513F4D4A0DE20740A311E3 /* Pods-KeyboardCounter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardCounter.debug.xcconfig"; path = "Target Support Files/Pods-KeyboardCounter/Pods-KeyboardCounter.debug.xcconfig"; sourceTree = "<group>"; };
@@ -102,6 +107,7 @@
 			children = (
 				21013E2C24E6C68900EA8305 /* Model */,
 				21013E2B24E6C67F00EA8305 /* ViewModel */,
+				21EE917825E1484300EDD3B7 /* FKeyboardMenuView.swift */,
 			);
 			path = Counter;
 			sourceTree = "<group>";
@@ -110,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				2132B39A24E52048001D9624 /* FKeyboardViewModel.swift */,
+				21EE919525E3958F00EDD3B7 /* FDatabaseManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -168,6 +175,7 @@
 				2188DCAD24E4F0380002194A /* Info.plist */,
 				2188DCAE24E4F0380002194A /* KeyboardCounter.entitlements */,
 				2188DCA724E4F0380002194A /* Preview Content */,
+				21EE913925DE92CB00EDD3B7 /* KeyboardCounter-Bridging-Header.h */,
 			);
 			path = KeyboardCounter;
 			sourceTree = "<group>";
@@ -241,6 +249,7 @@
 					};
 					2188DC9D24E4F0370002194A = {
 						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -326,6 +335,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				21013E0A24E6761A00EA8305 /* FCounterModel.swift in Sources */,
+				21EE917925E1484300EDD3B7 /* FKeyboardMenuView.swift in Sources */,
+				21EE919625E3958F00EDD3B7 /* FDatabaseManager.swift in Sources */,
 				2132B39B24E52048001D9624 /* FKeyboardViewModel.swift in Sources */,
 				2188DCA224E4F0370002194A /* AppDelegate.swift in Sources */,
 			);
@@ -506,6 +517,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = KeyboardCounter/KeyboardCounter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -519,6 +531,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.KeyboardCounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KeyboardCounter/KeyboardCounter-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -529,6 +543,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = KeyboardCounter/KeyboardCounter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -542,6 +557,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.KeyboardCounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KeyboardCounter/KeyboardCounter-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

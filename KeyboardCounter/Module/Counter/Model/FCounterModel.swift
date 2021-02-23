@@ -7,8 +7,10 @@
 
 import Cocoa
 
+typealias AppBundleId = String
+
 struct FCounterModel {
-    var app: NSRunningApplication?
+    var app: AppBundleId?
     //日期
     var dateString: String
     //开始时间
@@ -19,12 +21,24 @@ struct FCounterModel {
     var count: Int
     var lineNum: Int
     
-    init(app: NSRunningApplication?, dateString: String) {
+    init(app: AppBundleId?, dateString: String) {
         self.app = app
         self.dateString = dateString
         self.startTime = Date()
         self.endTime = nil
         self.count = 0
         self.lineNum = 0
+    }
+}
+
+struct FNumberModel {
+    var app: NSRunningApplication?
+    var appId: AppBundleId
+    var count: Int
+    
+    init(appId: AppBundleId, count: Int) {
+        self.appId = appId
+        self.count = count
+        self.app = nil
     }
 }

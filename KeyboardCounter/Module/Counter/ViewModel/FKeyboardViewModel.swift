@@ -8,59 +8,57 @@
 import Cocoa
 import RxSwift
 import RxCocoa
-import ServiceManagement
 
+typealias AppsDictionary = Dictionary<String, NSRunningApplication>
+
+let appInfoKey = "appInfo"
 let totalCountKey = "totalCountKey"
 let mouseCountKey = "mouseCountKey"
 
 class FKeyboardViewModel: NSObject {
-
-    @IBOutlet var statusMenu: NSMenu!
-    @IBOutlet weak var startItem: NSMenuItem!
-    
     
     @objc dynamic var count: Int = 0
     
-    lazy var disposeBag = { () -> DisposeBag in
+    private lazy var disposeBag = { () -> DisposeBag in
         let disposeBag = DisposeBag()
         return disposeBag
     }()
     
-    lazy var model: FCounterModel? = {
-        let model = FCounterModel(app: activeApp, dateString: dateString!)
+    private lazy var model: FCounterModel? = {
+        let model = FCounterModel(app: appBundleId, dateString: dateString!)
         return model
     }()
     
-    var activeApp: NSRunningApplication?
-    lazy var dateString: String? = {
+    //临时信息
+    var appBundleId: AppBundleId?
+    var apps: AppsDictionary?
+    
+    //日期格式化
+    private lazy var dateString: String? = {
         return getDateString()
     }()
     
-    lazy var dateFormatter: DateFormatter? = { () -> DateFormatter in
+    private lazy var dateFormatter: DateFormatter? = { () -> DateFormatter in
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
         return dateFormatter
     }()
     
-    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    //UI
+    private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    
+    private let dbManager = FDatabaseManager()
     
     override init() {
         super.init()
+        
+        getAppInfo()
         //获取今天总数
         todayTotal()
-        
-        //监听
         bindAction()
     }
-    override func awakeFromNib() {
-        let icon = NSImage(named: "keyboard")
-        icon?.isTemplate = true
-        statusItem.button?.image = icon
-        statusItem.button?.imagePosition = NSControl.ImagePosition.imageLeft
-        statusItem.menu = statusMenu
-    }
     
-    func bindAction() {
+    private func bindAction() {
         let open = AXIsProcessTrusted()
         if !open {
             print("需要开启辅助功能权限")
@@ -82,9 +80,6 @@ class FKeyboardViewModel: NSObject {
             }
         }
         
-        _ = self.rx.observe(Int.self, "count").takeUntil(rx.deallocated).subscribe(onNext: {[weak self] (value) in
-            self?.statusItem.button?.title = " \(value!)/字"
-        })
         
         Observable<Int>.interval(RxTimeInterval.seconds(1), scheduler: MainScheduler.asyncInstance).subscribe {[weak self] (value) in
 
@@ -94,11 +89,6 @@ class FKeyboardViewModel: NSObject {
                 self?.todayTotal()
             }
         }.disposed(by: disposeBag)
-        
-      _ =  NotificationCenter.default.rx.notification(NSApplication.willTerminateNotification).subscribe { [weak self] (notification) in
-            self?.saveTotal()
-            self?.saveData()
-        }
     }
     
     func saveDayData() {
@@ -107,29 +97,29 @@ class FKeyboardViewModel: NSObject {
     }
     
     //MARK: 功能
-    func todayTotal() {
+    private func todayTotal() {
         let key = totalKey(dateString!)
         count = UserDefaults.standard.value(forKey: key) as? Int ?? 0
     }
     
-    func saveTotal() {
+    private func saveTotal() {
         let key = totalKey(dateString!)
         UserDefaults.standard.setValue(count, forKey: key)
     }
     
-    func totalKey(_ date: String) -> String {
+    private func totalKey(_ date: String) -> String {
         return totalCountKey + "-" + date
     }
     
-    func getDateString() -> String {
+    private func getDateString() -> String {
         let date = Date()
         return (dateFormatter?.string(from: date))!
     }
     
-    @objc dynamic func startInput(_ event: NSEvent) {
+    @objc dynamic private func startInput(_ event: NSEvent) {
         self.count += 1
         if model == nil {
-            model = FCounterModel(app: activeApp, dateString: dateString!)
+            model = FCounterModel(app: appBundleId, dateString: dateString!)
         } else {
             model?.count += 1
             if event.characters == "\r" {
@@ -140,10 +130,13 @@ class FKeyboardViewModel: NSObject {
         
     }
     
-    func saveData() {
+    private func saveData() {
         //TODO: 123
         print("saveData")
-        model?.endTime = Date()
+        if model!.count > 0 {
+            model?.endTime = Date()
+            dbManager.insertData(model: model!)
+        }
         model = nil
     }
     
@@ -151,10 +144,10 @@ class FKeyboardViewModel: NSObject {
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "frontmostApplication" {
             if let app: NSRunningApplication = change?[NSKeyValueChangeKey.newKey] as? NSRunningApplication {
-                print(app.localizedName!)
-                activeApp = app
+                
+                appBundleId = updateAppInfo(app: app)
                 if model?.app == nil {
-                    model?.app = app
+                    model?.app = appBundleId
                 } else {
                     //切换
                     saveData()
@@ -166,40 +159,36 @@ class FKeyboardViewModel: NSObject {
         }
     }
     
-    @IBAction func startupItemClick(_ sender: NSMenuItem) {
-        let open = sender.state != .on
-        
-        let launcherAppIdentifier = "com.example.KeyboardHelper"
-
-        if SMLoginItemSetEnabled(launcherAppIdentifier as CFString, open) {
-            if open {
-                print("添加登录项成功")
-                sender.state = .on
-            } else {
-                print("移除登录项成功")
-                sender.state = .off
-            }
-        } else {
-            print("添加登录项失败")
-        }
-
-        
+    private func getAppInfo() {
+        apps = UserDefaults.standard.value(forKey: appInfoKey) as? AppsDictionary ?? AppsDictionary()
     }
     
-    @IBAction func clearCacheData(_ sender: Any) {
-        let defaults = UserDefaults.standard
-        for key in defaults.dictionaryRepresentation().keys {
-            
-            defaults.removeObject(forKey: String(key))
+    private func updateAppInfo(app: NSRunningApplication) -> AppBundleId {
+        
+        let bundleId = getAppBundleID(app: app)
+        
+        guard apps?[bundleId] == nil else {
+            return bundleId
         }
-        count = 0
-    }
-    //MARK: action
-    @IBAction func quitClick(_ sender: NSMenuItem) {
-        saveData()
-        saveTotal()
-        NSApplication.shared.terminate(self)
+        
+        apps?[bundleId] = app
+        
+        storeAppInfo()
+        return app.bundleIdentifier!
     }
     
+    private func storeAppInfo() {
+        UserDefaults.standard.setValue(apps, forKey: appInfoKey)
+    }
+    
+    private func getAppBundleID(app: NSRunningApplication) -> AppBundleId {
+        return app.bundleIdentifier ?? app.localizedName!
+    }
+    
+    
+    //MARK: OPEN
+    func queryTodayData() -> Array<FNumberModel>? {
+        return dbManager.queryData(dateStr: dateString!)
+    }
 }
 

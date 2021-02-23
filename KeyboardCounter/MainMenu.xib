@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17156" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17156"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication"/>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
-        <customObject id="Hbd-ms-bi5" customClass="FKeyboardViewModel" customModule="KeyboardCounter" customModuleProvider="target">
+        <customObject id="Hbd-ms-bi5" customClass="FKeyboardMenuView" customModule="KeyboardCounter" customModuleProvider="target">
             <connections>
+                <outlet property="dataItem" destination="OG9-qf-Dsd" id="RLC-Aw-1TH"/>
                 <outlet property="startItem" destination="rua-nR-XKA" id="eQ6-Go-PxE"/>
                 <outlet property="statusMenu" destination="9zs-pW-6p9" id="jer-fJ-alG"/>
             </connections>
@@ -23,11 +24,14 @@
                         <action selector="startupItemClick:" target="Hbd-ms-bi5" id="R8M-99-S7h"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Clear" id="gqP-zh-EIw">
+                <menuItem title="查询数据" id="OG9-qf-Dsd">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="clearCacheData:" target="Hbd-ms-bi5" id="ctu-Va-DN0"/>
+                        <action selector="queryDataClick:" target="Hbd-ms-bi5" id="hQA-DV-Aae"/>
                     </connections>
+                </menuItem>
+                <menuItem title="今天数据" id="FM2-hy-9Rp">
+                    <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
                 <menuItem title="Quit" id="8FC-7p-z3h">
                     <modifierMask key="keyEquivalentModifierMask"/>
@@ -37,6 +41,20 @@
                 </menuItem>
             </items>
             <point key="canvasLocation" x="166" y="154"/>
+        </menu>
+        <menu id="S5g-xo-BaH">
+            <items>
+                <menuItem title="Item 1" id="h6g-WU-wQg">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Item 2" id="GiN-mT-zWd">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Item 3" id="Zy2-b7-yd8">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="340" y="197"/>
         </menu>
     </objects>
 </document>
