@@ -51,14 +51,16 @@ class FKeyboardMenuView: NSObject, NSMenuDelegate {
     //MARK: NSMenuDelegate
     func menuWillOpen(_ menu: NSMenu) {
         subMenu.removeAllItems()
-        guard let array = viewModel.queryTodayData() else {
+        
+        let array = viewModel.queryTodayData()
+        guard array?.count ?? 0 > 0 else {
             let noData = NSMenuItem.init()
             noData.title = "暂无数据"
             subMenu.addItem(noData)
             return
         }
         
-        for model in array {
+        for model in array! {
             
             let app = viewModel.apps?[model.appId]
             

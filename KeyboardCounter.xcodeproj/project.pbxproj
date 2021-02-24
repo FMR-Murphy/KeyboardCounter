@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		21013E0A24E6761A00EA8305 /* FCounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21013E0924E6761A00EA8305 /* FCounterModel.swift */; };
 		21013E2824E6B2A400EA8305 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21013E2724E6B2A400EA8305 /* MainMenu.xib */; };
+		2130B48D25E64E6100B3D6CA /* FApplicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2130B48C25E64E6100B3D6CA /* FApplicationModel.swift */; };
 		2132B39B24E52048001D9624 /* FKeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2132B39A24E52048001D9624 /* FKeyboardViewModel.swift */; };
 		214FB3602514B267001FE429 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 214FB35F2514B267001FE429 /* AppDelegate.m */; };
 		214FB3632514B267001FE429 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214FB3622514B267001FE429 /* ViewController.m */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		21013E0924E6761A00EA8305 /* FCounterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCounterModel.swift; sourceTree = "<group>"; };
 		21013E2724E6B2A400EA8305 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		2130B48C25E64E6100B3D6CA /* FApplicationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FApplicationModel.swift; sourceTree = "<group>"; };
 		2132B39A24E52048001D9624 /* FKeyboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FKeyboardViewModel.swift; sourceTree = "<group>"; };
 		214FB35C2514B267001FE429 /* KeyboardHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyboardHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		214FB35E2514B267001FE429 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				21013E0924E6761A00EA8305 /* FCounterModel.swift */,
+				2130B48C25E64E6100B3D6CA /* FApplicationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				21013E0A24E6761A00EA8305 /* FCounterModel.swift in Sources */,
 				21EE917925E1484300EDD3B7 /* FKeyboardMenuView.swift in Sources */,
 				21EE919625E3958F00EDD3B7 /* FDatabaseManager.swift in Sources */,
+				2130B48D25E64E6100B3D6CA /* FApplicationModel.swift in Sources */,
 				2132B39B24E52048001D9624 /* FKeyboardViewModel.swift in Sources */,
 				2188DCA224E4F0370002194A /* AppDelegate.swift in Sources */,
 			);

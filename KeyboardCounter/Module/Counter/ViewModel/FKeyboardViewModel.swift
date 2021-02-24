@@ -9,7 +9,7 @@ import Cocoa
 import RxSwift
 import RxCocoa
 
-typealias AppsDictionary = Dictionary<String, NSRunningApplication>
+typealias AppsDictionary = Dictionary<String, FApplicationModel>
 
 let appInfoKey = "appInfo"
 let totalCountKey = "totalCountKey"
@@ -160,7 +160,13 @@ class FKeyboardViewModel: NSObject {
     }
     
     private func getAppInfo() {
-        apps = UserDefaults.standard.value(forKey: appInfoKey) as? AppsDictionary ?? AppsDictionary()
+
+        apps = AppsDictionary()
+        let appsDic = UserDefaults.standard.value(forKey: appInfoKey) as? [String: Data] ?? [String: Data]()
+        for (key,appData) in appsDic {
+            
+            apps![key] = try? NSKeyedUnarchiver.unarchivedObject(ofClass: FApplicationModel.self, from: appData)
+        }
     }
     
     private func updateAppInfo(app: NSRunningApplication) -> AppBundleId {
@@ -171,14 +177,20 @@ class FKeyboardViewModel: NSObject {
             return bundleId
         }
         
-        apps?[bundleId] = app
+        let model = FApplicationModel.model(withApp: app)
+        apps?[bundleId] = model
         
-        storeAppInfo()
-        return app.bundleIdentifier!
+        storeAppInfo(key: bundleId, app: model)
+        
+        return bundleId
     }
     
-    private func storeAppInfo() {
-        UserDefaults.standard.setValue(apps, forKey: appInfoKey)
+    private func storeAppInfo(key: String, app: FApplicationModel) {
+        var appsDic = UserDefaults.standard.value(forKey: appInfoKey) as? [String: Data] ?? [String: Data]()
+        let data = try? NSKeyedArchiver.archivedData(withRootObject: app, requiringSecureCoding: false)
+        
+        appsDic[key] = data
+        UserDefaults.standard.setValue(appsDic, forKey: appInfoKey)
     }
     
     private func getAppBundleID(app: NSRunningApplication) -> AppBundleId {

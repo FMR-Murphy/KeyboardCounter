@@ -97,10 +97,7 @@ class FDatabaseManager: NSObject {
             .order(count.sum.desc)
             .group(appId)
             .filter(dateString == dateStr)
-            
-//        let appidQuery = counts!.select(appId.distinct)
-//            .filter(dateString == dateStr)
-        
+                    
         guard let data = try? db!.prepare(query) else {
             return nil
         }
