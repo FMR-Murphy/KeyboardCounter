@@ -54,6 +54,7 @@ class FKeyboardMenuView: NSObject, NSMenuDelegate {
         guard let array = viewModel.queryTodayData() else {
             let noData = NSMenuItem.init()
             noData.title = "暂无数据"
+            subMenu.addItem(noData)
             return
         }
         
@@ -62,6 +63,7 @@ class FKeyboardMenuView: NSObject, NSMenuDelegate {
             let app = viewModel.apps?[model.appId]
             
             let item = NSMenuItem(title: String(model.count), action: #selector(numberItemClick(item:)), keyEquivalent: "")
+            item.toolTip = app?.localizedName
             item.image = app?.icon
             item.target = self
             subMenu.addItem(item)
