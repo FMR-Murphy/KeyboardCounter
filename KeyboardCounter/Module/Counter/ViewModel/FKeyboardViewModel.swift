@@ -133,7 +133,7 @@ class FKeyboardViewModel: NSObject {
     private func saveData() {
         //TODO: 123
         print("saveData")
-        if model!.count > 0 {
+        if model?.count ?? 0 > 0 {
             model?.endTime = Date()
             dbManager.insertData(model: model!)
         }

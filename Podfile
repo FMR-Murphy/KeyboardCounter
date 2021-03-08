@@ -1,7 +1,7 @@
 source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 
 inhibit_all_warnings!
-platform :macos, '10.15'
+platform :macos, '10.14'
 #use_frameworks!
 
 
