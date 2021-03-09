@@ -104,11 +104,49 @@ class FDatabaseManager: NSObject {
         
         var array = [FNumberModel]()
         for user in data {
-            print(user)
             let number = FNumberModel.init(appId: user[appId], count: user[count.sum]!)
             array.append(number)
         }
         return array
     }
     
+    func queryTotolCount(dateStr: String) -> Int {
+        guard counts != nil && db != nil else {
+            print("insertData faile: 数据库不存在或表不存在")
+            return 0
+        }
+        
+        let query = counts!.select(count.sum)
+            .filter(dateString == dateStr)
+        
+        guard let data = try? db!.prepare(query) else {
+            return 0
+        }
+        
+        var i = 0
+        for item in data {
+            i += item[count.sum] ?? 0
+        }
+        return i
+    }
+    
+    func queryAllTotal() -> Array<Any>? {
+        guard counts != nil && db != nil else {
+            print("insertData faile: 数据库不存在或表不存在")
+            return nil
+        }
+        
+        let query = counts!.select(appId, count.sum, dateString)
+            .order(dateString.asc)
+            .group(dateString)
+        
+        guard let data = try? db!.prepare(query) else {
+            return nil
+        }
+        
+        for item in data {
+            print(item)
+        }
+        return nil
+    }
 }

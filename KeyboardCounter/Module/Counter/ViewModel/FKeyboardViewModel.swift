@@ -84,31 +84,16 @@ class FKeyboardViewModel: NSObject {
         Observable<Int>.interval(RxTimeInterval.seconds(1), scheduler: MainScheduler.asyncInstance).subscribe {[weak self] (value) in
 
             if self?.dateString != self?.getDateString() {
-                self?.saveDayData()
+                self?.saveData()
                 self?.dateString = self?.getDateString()
                 self?.todayTotal()
             }
         }.disposed(by: disposeBag)
     }
     
-    func saveDayData() {
-        saveTotal()
-        saveData()
-    }
-    
     //MARK: 功能
     private func todayTotal() {
-        let key = totalKey(dateString!)
-        count = UserDefaults.standard.value(forKey: key) as? Int ?? 0
-    }
-    
-    private func saveTotal() {
-        let key = totalKey(dateString!)
-        UserDefaults.standard.setValue(count, forKey: key)
-    }
-    
-    private func totalKey(_ date: String) -> String {
-        return totalCountKey + "-" + date
+        count = queryTotalCount()
     }
     
     private func getDateString() -> String {
@@ -199,8 +184,20 @@ class FKeyboardViewModel: NSObject {
     
     
     //MARK: OPEN
+    func saveDayData() {
+        saveData()
+    }
+    
     func queryTodayData() -> Array<FNumberModel>? {
         return dbManager.queryData(dateStr: dateString!)
+    }
+    
+    func queryTotalCount() -> Int {
+        return dbManager.queryTotolCount(dateStr: dateString!)
+    }
+    
+    func queryAllTotal() -> Array<Any>? {
+        return dbManager.queryAllTotal()
     }
 }
 
