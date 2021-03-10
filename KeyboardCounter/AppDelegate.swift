@@ -7,7 +7,6 @@
 
 import Cocoa
 import SwiftUI
-import ServiceManagement
 
 @NSApplicationMain
 
@@ -28,8 +27,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //        window.contentView = NSHostingView(rootView: contentView)
 //        window.makeKeyAndOrderFront(nil)
         let launcherAppIdentifier = "com.example.KeyboardCounter.helper"
-        
-        SMLoginItemSetEnabled(launcherAppIdentifier as CFString, true)
         
         var startedAtLogin = false
         for app in NSWorkspace.shared.runningApplications {

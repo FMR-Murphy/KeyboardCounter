@@ -8,16 +8,19 @@
 import Cocoa
 import RxSwift
 import RxCocoa
+import ServiceManagement
+
 
 typealias AppsDictionary = Dictionary<String, FApplicationModel>
 
 let appInfoKey = "appInfo"
-let totalCountKey = "totalCountKey"
 let mouseCountKey = "mouseCountKey"
+let autoStartKey = "AutoStartKey"
 
 class FKeyboardViewModel: NSObject {
     
     @objc dynamic var count: Int = 0
+    @objc dynamic var autoLaunch = false
     
     private lazy var disposeBag = { () -> DisposeBag in
         let disposeBag = DisposeBag()
@@ -53,6 +56,7 @@ class FKeyboardViewModel: NSObject {
         super.init()
         
         getAppInfo()
+        getAutoState()
         //获取今天总数
         todayTotal()
         bindAction()
@@ -182,8 +186,21 @@ class FKeyboardViewModel: NSObject {
         return app.bundleIdentifier ?? app.localizedName!
     }
     
+    private func getAutoState() {
+        autoLaunch = UserDefaults.standard.value(forKey: autoStartKey) as? Bool ?? false
+    }
     
     //MARK: OPEN
+    func changeAutoLaunchState(state: Bool, complate: (_ result: Bool) -> ()) {
+        let launcherAppIdentifier = "com.example.KeyboardCounter.helper"
+        let result = SMLoginItemSetEnabled(launcherAppIdentifier as CFString, state)
+        if result {
+            autoLaunch = state
+            UserDefaults.standard.setValue(state, forKey: autoStartKey)
+        }
+        complate(result)
+    }
+    
     func saveDayData() {
         saveData()
     }

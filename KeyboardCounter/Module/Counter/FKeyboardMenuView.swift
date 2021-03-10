@@ -12,10 +12,24 @@ import ServiceManagement
 
 class FKeyboardMenuView: NSObject, NSMenuDelegate {
     
-    @IBOutlet var statusMenu: NSMenu!
-    @IBOutlet weak var startItem: NSMenuItem!
-    @IBOutlet weak var dataItem: NSMenuItem!
+    let statusMenu = NSMenu()
+    lazy var autoItem: NSMenuItem = {
+        let item = NSMenuItem(title: "开机启动", action: #selector(autoLaunchItemClick(_:)), keyEquivalent: "")
+        item.target = self
+        return item
+    }()
     
+    lazy var dataItem: NSMenuItem = {
+        let item = NSMenuItem()
+        item.title = "今日数据"
+        return item
+    }()
+    
+    lazy var quitItem: NSMenuItem = {
+        let item = NSMenuItem(title: "Quit", action: #selector(quitClick(_:)), keyEquivalent: "")
+        item.target = self
+        return item
+    }()
     
     let viewModel = FKeyboardViewModel()
     
@@ -30,15 +44,22 @@ class FKeyboardMenuView: NSObject, NSMenuDelegate {
     }
     
     override func awakeFromNib() {
+        createUI()
+    }
+    
+    func createUI() {
         let icon = NSImage(named: "keyboard")
         icon?.isTemplate = true
         statusItem.button?.image = icon
         statusItem.button?.imagePosition = NSControl.ImagePosition.imageLeft
         statusItem.menu = statusMenu
         
+        statusMenu.addItem(autoItem)
+        statusMenu.addItem(dataItem)
+        statusMenu.addItem(quitItem)
+        
         statusMenu.setSubmenu(subMenu, for: dataItem)
         subMenu.delegate = self
-        
     }
     
     func bindAction() {
@@ -46,6 +67,9 @@ class FKeyboardMenuView: NSObject, NSMenuDelegate {
             self?.statusItem.button?.title = " \(value!)/字"
         })
         
+        _ = self.viewModel.rx.observe(Bool.self, "autoLaunch").takeUntil(rx.deallocated).subscribe(onNext: {[weak self] (value) in
+            self?.autoItem.state = value ?? false ? .on : .off
+        })
     }
     
     //MARK: NSMenuDelegate
@@ -77,33 +101,21 @@ class FKeyboardMenuView: NSObject, NSMenuDelegate {
     }
     
     //MARK: action
-    @IBAction func startupItemClick(_ sender: NSMenuItem) {
+    @objc func autoLaunchItemClick(_ sender: NSMenuItem) {
         let open = sender.state != .on
         
-        let launcherAppIdentifier = "com.example.KeyboardCounter.helper"
-        
-        if SMLoginItemSetEnabled(launcherAppIdentifier as CFString, open) {
-            if open {
-                print("添加登录项成功")
-                sender.state = .on
-            } else {
-                print("移除登录项成功")
-                sender.state = .off
-            }
-        } else {
-            print("添加登录项失败")
+        viewModel.changeAutoLaunchState(state: open) { (result) in
+            print("\(open ? "添加" : "移除")登录项\(result ? "成功" : "失败")")
         }
-        
     }
     
-    //MARK: action
-    @IBAction func quitClick(_ sender: NSMenuItem) {
+    @objc func quitClick(_ sender: NSMenuItem) {
         viewModel.saveDayData()
         NSApplication.shared.terminate(self)
     }
 
     
-    @IBAction func queryDataClick(_ sender: NSMenuItem) {
+    func queryDataClick(_ sender: NSMenuItem) {
         
     }
     

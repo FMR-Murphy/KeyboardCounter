@@ -13,50 +13,7 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
-        <customObject id="Hbd-ms-bi5" customClass="FKeyboardMenuView" customModule="KeyboardCounter" customModuleProvider="target">
-            <connections>
-                <outlet property="dataItem" destination="OG9-qf-Dsd" id="RLC-Aw-1TH"/>
-                <outlet property="startItem" destination="rua-nR-XKA" id="eQ6-Go-PxE"/>
-                <outlet property="statusMenu" destination="9zs-pW-6p9" id="jer-fJ-alG"/>
-            </connections>
-        </customObject>
         <customObject id="YLM-Hd-TLz" customClass="AppDelegate" customModule="KeyboardCounter" customModuleProvider="target"/>
-        <menu id="9zs-pW-6p9">
-            <items>
-                <menuItem title="开机启动" id="rua-nR-XKA">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="startupItemClick:" target="Hbd-ms-bi5" id="R8M-99-S7h"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="查询数据" id="OG9-qf-Dsd">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="queryDataClick:" target="Hbd-ms-bi5" id="hQA-DV-Aae"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Quit" id="8FC-7p-z3h">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="quitClick:" target="Hbd-ms-bi5" id="K7i-CU-72k"/>
-                    </connections>
-                </menuItem>
-            </items>
-            <point key="canvasLocation" x="166" y="154"/>
-        </menu>
-        <menu id="S5g-xo-BaH">
-            <items>
-                <menuItem title="Item 1" id="h6g-WU-wQg">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                </menuItem>
-                <menuItem title="Item 2" id="GiN-mT-zWd">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                </menuItem>
-                <menuItem title="Item 3" id="Zy2-b7-yd8">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                </menuItem>
-            </items>
-            <point key="canvasLocation" x="340" y="197"/>
-        </menu>
+        <customObject id="Hbd-ms-bi5" customClass="FKeyboardMenuView" customModule="KeyboardCounter" customModuleProvider="target"/>
     </objects>
 </document>
