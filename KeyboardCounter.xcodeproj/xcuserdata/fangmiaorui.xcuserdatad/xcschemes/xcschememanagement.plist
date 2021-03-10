@@ -7,12 +7,25 @@
 		<key>KeyboardCounter.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>7</integer>
 		</dict>
 		<key>KeyboardHelper.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>6</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>214FB35B2514B267001FE429</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2188DC9D24E4F0370002194A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

@@ -9,17 +9,18 @@
 /* Begin PBXBuildFile section */
 		21013E0A24E6761A00EA8305 /* FCounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21013E0924E6761A00EA8305 /* FCounterModel.swift */; };
 		21013E2824E6B2A400EA8305 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21013E2724E6B2A400EA8305 /* MainMenu.xib */; };
+		211F525725F898440083BACA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 211F525625F898440083BACA /* Cocoa.framework */; };
+		211F525925F8984E0083BACA /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 211F525825F8984E0083BACA /* ServiceManagement.framework */; };
 		2130B48D25E64E6100B3D6CA /* FApplicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2130B48C25E64E6100B3D6CA /* FApplicationModel.swift */; };
 		2132B39B24E52048001D9624 /* FKeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2132B39A24E52048001D9624 /* FKeyboardViewModel.swift */; };
-		214FB3602514B267001FE429 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 214FB35F2514B267001FE429 /* AppDelegate.m */; };
-		214FB3632514B267001FE429 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214FB3622514B267001FE429 /* ViewController.m */; };
-		214FB3652514B268001FE429 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 214FB3642514B268001FE429 /* Assets.xcassets */; };
-		214FB3682514B268001FE429 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 214FB3662514B268001FE429 /* Main.storyboard */; };
-		214FB36B2514B268001FE429 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 214FB36A2514B268001FE429 /* main.m */; };
-		214FB3732514B359001FE429 /* KeyboardHelper.app in Copy Files */ = {isa = PBXBuildFile; fileRef = 214FB35C2514B267001FE429 /* KeyboardHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2188DCA224E4F0370002194A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2188DCA124E4F0370002194A /* AppDelegate.swift */; };
 		2188DCA624E4F0380002194A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2188DCA524E4F0380002194A /* Assets.xcassets */; };
 		2188DCA924E4F0380002194A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2188DCA824E4F0380002194A /* Preview Assets.xcassets */; };
+		218956C025F8BB63006BB424 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 218956BF25F8BB63006BB424 /* AppDelegate.m */; };
+		218956C225F8BB63006BB424 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 218956C125F8BB63006BB424 /* Assets.xcassets */; };
+		218956C525F8BB63006BB424 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218956C325F8BB63006BB424 /* MainMenu.xib */; };
+		218956C825F8BB63006BB424 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 218956C725F8BB63006BB424 /* main.m */; };
+		218956D125F8BC6E006BB424 /* KeyboardHelper.app in Copy Files */ = {isa = PBXBuildFile; fileRef = 218956BC25F8BB63006BB424 /* KeyboardHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		21EE917925E1484300EDD3B7 /* FKeyboardMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EE917825E1484300EDD3B7 /* FKeyboardMenuView.swift */; };
 		21EE919625E3958F00EDD3B7 /* FDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EE919525E3958F00EDD3B7 /* FDatabaseManager.swift */; };
 		6AF52E1DDDE4FBC6A3F98161 /* libPods-KeyboardCounter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 646DE8871A7BF86C9B1286C1 /* libPods-KeyboardCounter.a */; };
@@ -32,7 +33,7 @@
 			dstPath = Contents/Library/LoginItems;
 			dstSubfolderSpec = 1;
 			files = (
-				214FB3732514B359001FE429 /* KeyboardHelper.app in Copy Files */,
+				218956D125F8BC6E006BB424 /* KeyboardHelper.app in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,24 +43,24 @@
 /* Begin PBXFileReference section */
 		21013E0924E6761A00EA8305 /* FCounterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCounterModel.swift; sourceTree = "<group>"; };
 		21013E2724E6B2A400EA8305 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		211F525625F898440083BACA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		211F525825F8984E0083BACA /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		2130B48C25E64E6100B3D6CA /* FApplicationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FApplicationModel.swift; sourceTree = "<group>"; };
 		2132B39A24E52048001D9624 /* FKeyboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FKeyboardViewModel.swift; sourceTree = "<group>"; };
-		214FB35C2514B267001FE429 /* KeyboardHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyboardHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		214FB35E2514B267001FE429 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		214FB35F2514B267001FE429 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		214FB3612514B267001FE429 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		214FB3622514B267001FE429 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		214FB3642514B268001FE429 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		214FB3672514B268001FE429 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		214FB3692514B268001FE429 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		214FB36A2514B268001FE429 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		214FB36C2514B268001FE429 /* KeyboardHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardHelper.entitlements; sourceTree = "<group>"; };
 		2188DC9E24E4F0370002194A /* KeyboardCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyboardCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2188DCA124E4F0370002194A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2188DCA524E4F0380002194A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2188DCA824E4F0380002194A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2188DCAD24E4F0380002194A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2188DCAE24E4F0380002194A /* KeyboardCounter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardCounter.entitlements; sourceTree = "<group>"; };
+		218956BC25F8BB63006BB424 /* KeyboardHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyboardHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		218956BE25F8BB63006BB424 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		218956BF25F8BB63006BB424 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		218956C125F8BB63006BB424 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		218956C425F8BB63006BB424 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		218956C625F8BB63006BB424 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		218956C725F8BB63006BB424 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		218956C925F8BB63006BB424 /* KeyboardHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardHelper.entitlements; sourceTree = "<group>"; };
 		21EE913925DE92CB00EDD3B7 /* KeyboardCounter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyboardCounter-Bridging-Header.h"; sourceTree = "<group>"; };
 		21EE917825E1484300EDD3B7 /* FKeyboardMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FKeyboardMenuView.swift; sourceTree = "<group>"; };
 		21EE919525E3958F00EDD3B7 /* FDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDatabaseManager.swift; sourceTree = "<group>"; };
@@ -69,18 +70,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		214FB3592514B267001FE429 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2188DC9B24E4F0370002194A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				211F525925F8984E0083BACA /* ServiceManagement.framework in Frameworks */,
+				211F525725F898440083BACA /* Cocoa.framework in Frameworks */,
 				6AF52E1DDDE4FBC6A3F98161 /* libPods-KeyboardCounter.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		218956B925F8BB63006BB424 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,27 +135,11 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		214FB35D2514B267001FE429 /* KeyboardHelper */ = {
-			isa = PBXGroup;
-			children = (
-				214FB35E2514B267001FE429 /* AppDelegate.h */,
-				214FB35F2514B267001FE429 /* AppDelegate.m */,
-				214FB3612514B267001FE429 /* ViewController.h */,
-				214FB3622514B267001FE429 /* ViewController.m */,
-				214FB3642514B268001FE429 /* Assets.xcassets */,
-				214FB3662514B268001FE429 /* Main.storyboard */,
-				214FB3692514B268001FE429 /* Info.plist */,
-				214FB36A2514B268001FE429 /* main.m */,
-				214FB36C2514B268001FE429 /* KeyboardHelper.entitlements */,
-			);
-			path = KeyboardHelper;
-			sourceTree = "<group>";
-		};
 		2188DC9524E4F0370002194A = {
 			isa = PBXGroup;
 			children = (
 				2188DCA024E4F0370002194A /* KeyboardCounter */,
-				214FB35D2514B267001FE429 /* KeyboardHelper */,
+				218956BD25F8BB63006BB424 /* KeyboardHelper */,
 				2188DC9F24E4F0370002194A /* Products */,
 				17E48EDBB28D35C1ABA88EE1 /* Pods */,
 				39CC27BFB0ADAE2210931F64 /* Frameworks */,
@@ -163,7 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				2188DC9E24E4F0370002194A /* KeyboardCounter.app */,
-				214FB35C2514B267001FE429 /* KeyboardHelper.app */,
+				218956BC25F8BB63006BB424 /* KeyboardHelper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,9 +178,25 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		218956BD25F8BB63006BB424 /* KeyboardHelper */ = {
+			isa = PBXGroup;
+			children = (
+				218956BE25F8BB63006BB424 /* AppDelegate.h */,
+				218956BF25F8BB63006BB424 /* AppDelegate.m */,
+				218956C125F8BB63006BB424 /* Assets.xcassets */,
+				218956C325F8BB63006BB424 /* MainMenu.xib */,
+				218956C625F8BB63006BB424 /* Info.plist */,
+				218956C725F8BB63006BB424 /* main.m */,
+				218956C925F8BB63006BB424 /* KeyboardHelper.entitlements */,
+			);
+			path = KeyboardHelper;
+			sourceTree = "<group>";
+		};
 		39CC27BFB0ADAE2210931F64 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				211F525825F8984E0083BACA /* ServiceManagement.framework */,
+				211F525625F898440083BACA /* Cocoa.framework */,
 				646DE8871A7BF86C9B1286C1 /* libPods-KeyboardCounter.a */,
 			);
 			name = Frameworks;
@@ -202,23 +205,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		214FB35B2514B267001FE429 /* KeyboardHelper */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 214FB36F2514B268001FE429 /* Build configuration list for PBXNativeTarget "KeyboardHelper" */;
-			buildPhases = (
-				214FB3582514B267001FE429 /* Sources */,
-				214FB3592514B267001FE429 /* Frameworks */,
-				214FB35A2514B267001FE429 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = KeyboardHelper;
-			productName = KeyboardHelper;
-			productReference = 214FB35C2514B267001FE429 /* KeyboardHelper.app */;
-			productType = "com.apple.product-type.application";
-		};
 		2188DC9D24E4F0370002194A /* KeyboardCounter */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2188DCB124E4F0380002194A /* Build configuration list for PBXNativeTarget "KeyboardCounter" */;
@@ -238,6 +224,23 @@
 			productReference = 2188DC9E24E4F0370002194A /* KeyboardCounter.app */;
 			productType = "com.apple.product-type.application";
 		};
+		218956BB25F8BB63006BB424 /* KeyboardHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 218956CA25F8BB63006BB424 /* Build configuration list for PBXNativeTarget "KeyboardHelper" */;
+			buildPhases = (
+				218956B825F8BB63006BB424 /* Sources */,
+				218956B925F8BB63006BB424 /* Frameworks */,
+				218956BA25F8BB63006BB424 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KeyboardHelper;
+			productName = KeyboardHelper;
+			productReference = 218956BC25F8BB63006BB424 /* KeyboardHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -247,12 +250,12 @@
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
-					214FB35B2514B267001FE429 = {
-						CreatedOnToolsVersion = 12.0;
-					};
 					2188DC9D24E4F0370002194A = {
 						CreatedOnToolsVersion = 12.0;
 						LastSwiftMigration = 1240;
+					};
+					218956BB25F8BB63006BB424 = {
+						CreatedOnToolsVersion = 12.4;
 					};
 				};
 			};
@@ -270,21 +273,12 @@
 			projectRoot = "";
 			targets = (
 				2188DC9D24E4F0370002194A /* KeyboardCounter */,
-				214FB35B2514B267001FE429 /* KeyboardHelper */,
+				218956BB25F8BB63006BB424 /* KeyboardHelper */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		214FB35A2514B267001FE429 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				214FB3652514B268001FE429 /* Assets.xcassets in Resources */,
-				214FB3682514B268001FE429 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2188DC9C24E4F0370002194A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -292,6 +286,15 @@
 				21013E2824E6B2A400EA8305 /* MainMenu.xib in Resources */,
 				2188DCA924E4F0380002194A /* Preview Assets.xcassets in Resources */,
 				2188DCA624E4F0380002194A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		218956BA25F8BB63006BB424 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				218956C225F8BB63006BB424 /* Assets.xcassets in Resources */,
+				218956C525F8BB63006BB424 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,16 +326,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		214FB3582514B267001FE429 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				214FB3632514B267001FE429 /* ViewController.m in Sources */,
-				214FB36B2514B268001FE429 /* main.m in Sources */,
-				214FB3602514B267001FE429 /* AppDelegate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2188DC9A24E4F0370002194A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -346,60 +339,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		218956B825F8BB63006BB424 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				218956C825F8BB63006BB424 /* main.m in Sources */,
+				218956C025F8BB63006BB424 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		214FB3662514B268001FE429 /* Main.storyboard */ = {
+		218956C325F8BB63006BB424 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				214FB3672514B268001FE429 /* Base */,
+				218956C425F8BB63006BB424 /* Base */,
 			);
-			name = Main.storyboard;
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		214FB36D2514B268001FE429 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = KeyboardHelper/KeyboardHelper.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = KeyboardHelper/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.KeyboardHelper;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		214FB36E2514B268001FE429 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = KeyboardHelper/KeyboardHelper.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = KeyboardHelper/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.KeyboardHelper;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 		2188DCAF24E4F0380002194A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -566,18 +528,49 @@
 			};
 			name = Release;
 		};
+		218956CB25F8BB63006BB424 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = KeyboardHelper/KeyboardHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = KeyboardHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.KeyboardCounter.helper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		218956CC25F8BB63006BB424 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = KeyboardHelper/KeyboardHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = KeyboardHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.KeyboardCounter.helper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		214FB36F2514B268001FE429 /* Build configuration list for PBXNativeTarget "KeyboardHelper" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				214FB36D2514B268001FE429 /* Debug */,
-				214FB36E2514B268001FE429 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2188DC9924E4F0370002194A /* Build configuration list for PBXProject "KeyboardCounter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -592,6 +585,15 @@
 			buildConfigurations = (
 				2188DCB224E4F0380002194A /* Debug */,
 				2188DCB324E4F0380002194A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		218956CA25F8BB63006BB424 /* Build configuration list for PBXNativeTarget "KeyboardHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				218956CB25F8BB63006BB424 /* Debug */,
+				218956CC25F8BB63006BB424 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

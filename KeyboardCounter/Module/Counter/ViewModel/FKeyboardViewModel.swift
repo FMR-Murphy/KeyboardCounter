@@ -59,10 +59,10 @@ class FKeyboardViewModel: NSObject {
     }
     
     private func bindAction() {
-        let open = AXIsProcessTrusted()
-        if !open {
+        
+        let opts = NSDictionary(object: true,forKey: kAXTrustedCheckOptionPrompt.takeUnretainedValue() as NSString) as CFDictionary
+        if !AXIsProcessTrustedWithOptions(opts) {
             print("需要开启辅助功能权限")
-            return
         }
         
         let workspace = NSWorkspace.shared

@@ -5,7 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication"/>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="YLM-Hd-TLz" id="1W8-Gq-Mqr"/>
+            </connections>
+        </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
@@ -16,9 +20,10 @@
                 <outlet property="statusMenu" destination="9zs-pW-6p9" id="jer-fJ-alG"/>
             </connections>
         </customObject>
+        <customObject id="YLM-Hd-TLz" customClass="AppDelegate" customModule="KeyboardCounter" customModuleProvider="target"/>
         <menu id="9zs-pW-6p9">
             <items>
-                <menuItem title="开机启动" state="on" id="rua-nR-XKA">
+                <menuItem title="开机启动" id="rua-nR-XKA">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="startupItemClick:" target="Hbd-ms-bi5" id="R8M-99-S7h"/>
@@ -29,9 +34,6 @@
                     <connections>
                         <action selector="queryDataClick:" target="Hbd-ms-bi5" id="hQA-DV-Aae"/>
                     </connections>
-                </menuItem>
-                <menuItem title="今天数据" id="FM2-hy-9Rp">
-                    <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
                 <menuItem title="Quit" id="8FC-7p-z3h">
                     <modifierMask key="keyEquivalentModifierMask"/>

@@ -7,6 +7,7 @@
 
 import Cocoa
 import SwiftUI
+import ServiceManagement
 
 @NSApplicationMain
 
@@ -26,13 +27,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //        window.setFrameAutosaveName("Main Window")
 //        window.contentView = NSHostingView(rootView: contentView)
 //        window.makeKeyAndOrderFront(nil)
-
-        var components = (Bundle.main.bundlePath as NSString).pathComponents as NSArray
-        components = components.subarray(with: NSMakeRange(0, components.count - 4)) as NSArray
+        let launcherAppIdentifier = "com.example.KeyboardCounter.helper"
         
-        let path = NSString.path(withComponents: components as! [String])
-        NSWorkspace.shared.launchApplication(path)
-        NSApp.terminate(nil)
+        SMLoginItemSetEnabled(launcherAppIdentifier as CFString, true)
+        
+        var startedAtLogin = false
+        for app in NSWorkspace.shared.runningApplications {
+            if app.bundleIdentifier == launcherAppIdentifier {
+                startedAtLogin = true
+                break
+            }
+        }
+        
+        if startedAtLogin {
+            DistributedNotificationCenter.default().postNotificationName(NSNotification.Name(rawValue: "killme"), object: Bundle.main.bundleIdentifier!, userInfo: nil, options: .deliverImmediately)
+        }
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {

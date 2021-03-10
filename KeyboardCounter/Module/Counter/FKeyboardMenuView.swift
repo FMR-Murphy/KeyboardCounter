@@ -80,8 +80,8 @@ class FKeyboardMenuView: NSObject, NSMenuDelegate {
     @IBAction func startupItemClick(_ sender: NSMenuItem) {
         let open = sender.state != .on
         
-        let launcherAppIdentifier = "com.example.KeyboardHelper"
-
+        let launcherAppIdentifier = "com.example.KeyboardCounter.helper"
+        
         if SMLoginItemSetEnabled(launcherAppIdentifier as CFString, open) {
             if open {
                 print("添加登录项成功")
