@@ -17,7 +17,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
     BOOL alreadyRuning = false;
-    NSString * mainBundleID = @"com.example.KeyboardHelper";
+    NSString * mainBundleID = @"com.example.KeyboardCounter";
     
     for (NSRunningApplication * app in [NSWorkspace sharedWorkspace].runningApplications ) {
         if ([app.bundleIdentifier isEqualToString:mainBundleID]) {
@@ -27,7 +27,7 @@
     }
     
     if (!alreadyRuning) {
-        [NSDistributedNotificationCenter.defaultCenter addObserverForName:@"killme" object:mainBundleID queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
+        [NSDistributedNotificationCenter.defaultCenter addObserverForName:@"killHelper" object:mainBundleID queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
             [NSApp terminate:nil];
         }];
         
@@ -59,6 +59,7 @@
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
+    NSLog(@"helper - %s",__func__);
 }
 
 

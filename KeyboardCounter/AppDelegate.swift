@@ -40,7 +40,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         if startedAtLogin {
-            DistributedNotificationCenter.default().postNotificationName(NSNotification.Name(rawValue: "killme"), object: Bundle.main.bundleIdentifier!, userInfo: nil, options: .deliverImmediately)
+            DistributedNotificationCenter.default().postNotificationName(NSNotification.Name(rawValue: "killHelper"), object: Bundle.main.bundleIdentifier!, userInfo: nil, options: .deliverImmediately)
         }
     }
     
