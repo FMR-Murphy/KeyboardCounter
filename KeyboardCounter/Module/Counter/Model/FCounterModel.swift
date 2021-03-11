@@ -14,7 +14,7 @@ struct FCounterModel {
     //日期
     var dateString: String
     //开始时间
-    var startTime: Date
+    var startTime: Date?
     //结束时间
     var endTime: Date?
     
@@ -24,7 +24,7 @@ struct FCounterModel {
     init(app: AppBundleId?, dateString: String) {
         self.app = app
         self.dateString = dateString
-        self.startTime = Date()
+        self.startTime = nil
         self.endTime = nil
         self.count = 0
         self.lineNum = 0

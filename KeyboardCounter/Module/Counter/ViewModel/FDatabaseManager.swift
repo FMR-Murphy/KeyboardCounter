@@ -75,7 +75,7 @@ class FDatabaseManager: NSObject {
         do {
             let rowid = try db!.run(counts!.insert(appId <- model.app!,
                                                    dateString <- model.dateString,
-                                                   startTime <- model.startTime,
+                                                   startTime <- model.startTime!,
                                                    endTime <- model.endTime!,
                                                    count <- model.count,
                                                    lineNum <- model.lineNum))

@@ -107,26 +107,30 @@ class FKeyboardViewModel: NSObject {
     
     @objc dynamic private func startInput(_ event: NSEvent) {
         self.count += 1
-        if model == nil {
-            model = FCounterModel(app: appBundleId, dateString: dateString!)
-        } else {
-            model?.count += 1
-            if event.characters == "\r" {
-                model?.lineNum += 1
-                print("换行   \r")
-            }
+        if model?.startTime == nil {
+            model?.startTime = Date()
         }
-        
+        if model?.app == nil {
+            model?.app = appBundleId
+        }
+        model?.count += 1
+        if event.characters == "\r" {
+            model?.lineNum += 1
+            print("换行   \r")
+        }
     }
     
     private func saveData() {
         //TODO: 123
-        print("saveData")
-        if model?.count ?? 0 > 0 {
-            model?.endTime = Date()
-            dbManager.insertData(model: model!)
+        guard model?.count ?? 0 > 0 && model?.app != nil else {
+            model = FCounterModel(app: appBundleId, dateString: dateString!)
+            return
         }
-        model = nil
+        model?.endTime = Date()
+        dbManager.insertData(model: model!)
+        print("saveData")
+        
+        model = FCounterModel(app: appBundleId, dateString: dateString!)
     }
     
     //MARK: observer
@@ -135,12 +139,7 @@ class FKeyboardViewModel: NSObject {
             if let app: NSRunningApplication = change?[NSKeyValueChangeKey.newKey] as? NSRunningApplication {
                 
                 appBundleId = updateAppInfo(app: app)
-                if model?.app == nil {
-                    model?.app = appBundleId
-                } else {
-                    //切换
-                    saveData()
-                }
+                saveData()
             }
             
         } else {
