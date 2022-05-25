@@ -8,7 +8,8 @@
 import Cocoa
 
 import ServiceManagement
-
+import RxSwift
+import RxCocoa
 
 class FKeyboardMenuView: NSObject, NSMenuDelegate {
     
@@ -63,8 +64,11 @@ class FKeyboardMenuView: NSObject, NSMenuDelegate {
     }
     
     func bindAction() {
-        _ = self.viewModel.rx.observe(Int.self, "count").takeUntil(rx.deallocated).subscribe(onNext: {[weak self] (value) in
-            self?.statusItem.button?.title = " \(value!)/字"
+        let countSignal = self.viewModel.rx.observe(Int.self, "count")
+        let tempSignal = self.viewModel.rx.observe(String.self, "temperature")
+        
+        _ = Observable.combineLatest(countSignal, tempSignal).takeUntil(rx.deallocated).subscribe(onNext: {[weak self] (first, second) in
+            self?.statusItem.button?.title = " \(first!)/字 | \(second!)˚C"
         })
         
         _ = self.viewModel.rx.observe(Bool.self, "autoLaunch").takeUntil(rx.deallocated).subscribe(onNext: {[weak self] (value) in

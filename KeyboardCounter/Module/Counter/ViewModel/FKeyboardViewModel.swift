@@ -21,7 +21,7 @@ class FKeyboardViewModel: NSObject {
     
     @objc dynamic var count: Int = 0
     @objc dynamic var autoLaunch = false
-    
+    @objc dynamic var temperature = ""
     private lazy var disposeBag = { () -> DisposeBag in
         let disposeBag = DisposeBag()
         return disposeBag
@@ -92,6 +92,7 @@ class FKeyboardViewModel: NSObject {
                 self?.dateString = self?.getDateString()
                 self?.todayTotal()
             }
+            self?.temperature = String(format: "%.2f", SMC().getValue("TC0P") ?? 0.0)
         }.disposed(by: disposeBag)
     }
     
