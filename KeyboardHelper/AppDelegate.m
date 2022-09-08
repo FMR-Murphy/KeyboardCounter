@@ -17,7 +17,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
     BOOL alreadyRuning = false;
-    NSString * mainBundleID = @"com.example.KeyboardCounter";
+    NSString * mainBundleID = @"com.murphy.KeyboardCounter";
     
     for (NSRunningApplication * app in [NSWorkspace sharedWorkspace].runningApplications ) {
         if ([app.bundleIdentifier isEqualToString:mainBundleID]) {

@@ -192,7 +192,7 @@ class FKeyboardViewModel: NSObject {
     
     //MARK: OPEN
     func changeAutoLaunchState(state: Bool, complate: (_ result: Bool) -> ()) {
-        let launcherAppIdentifier = "com.example.KeyboardCounter.helper"
+        let launcherAppIdentifier = "com.murphy.KeyboardCounter.helper"
         let result = SMLoginItemSetEnabled(launcherAppIdentifier as CFString, state)
         if result {
             autoLaunch = state

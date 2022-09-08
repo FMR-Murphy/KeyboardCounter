@@ -26,7 +26,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //        window.setFrameAutosaveName("Main Window")
 //        window.contentView = NSHostingView(rootView: contentView)
 //        window.makeKeyAndOrderFront(nil)
-        let launcherAppIdentifier = "com.example.KeyboardCounter.helper"
+        let launcherAppIdentifier = "com.murphy.KeyboardCounter.helper"
         
         var startedAtLogin = false
         for app in NSWorkspace.shared.runningApplications {
