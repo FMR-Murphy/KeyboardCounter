@@ -499,9 +499,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = KeyboardCounter/KeyboardCounter.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"KeyboardCounter/Preview Content\"";
+				DEVELOPMENT_TEAM = VSB67CY7LN;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = KeyboardCounter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -509,8 +511,9 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.KeyboardCounter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.murphy.KeyboardCounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KeyboardCounter/KeyboardCounter-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -525,9 +528,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = KeyboardCounter/KeyboardCounter.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"KeyboardCounter/Preview Content\"";
+				DEVELOPMENT_TEAM = VSB67CY7LN;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = KeyboardCounter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -535,8 +540,9 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.KeyboardCounter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.murphy.KeyboardCounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KeyboardCounter/KeyboardCounter-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
@@ -550,13 +556,14 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardHelper/KeyboardHelper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VSB67CY7LN;
 				INFOPLIST_FILE = KeyboardHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.KeyboardCounter.helper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.murphy.KeyboardCounter.helper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -570,13 +577,14 @@
 				CODE_SIGN_ENTITLEMENTS = KeyboardHelper/KeyboardHelper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VSB67CY7LN;
 				INFOPLIST_FILE = KeyboardHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.KeyboardCounter.helper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.murphy.KeyboardCounter.helper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
