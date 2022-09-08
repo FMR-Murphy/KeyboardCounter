@@ -154,7 +154,9 @@ class FKeyboardViewModel: NSObject {
         let appsDic = UserDefaults.standard.value(forKey: appInfoKey) as? [String: Data] ?? [String: Data]()
         for (key,appData) in appsDic {
             
-            apps![key] = try? NSKeyedUnarchiver.unarchivedObject(ofClass: FApplicationModel.self, from: appData)
+            apps![key] = try? (NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(appData) as! FApplicationModel)
+//            apps![key] = try? NSKeyedUnarchiver.unarchivedObject(ofClass: FApplicationModel.self, from: appData)
+            
         }
     }
     
