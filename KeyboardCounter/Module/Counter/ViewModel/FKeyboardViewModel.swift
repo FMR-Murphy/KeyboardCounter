@@ -16,6 +16,7 @@ typealias AppsDictionary = Dictionary<String, FApplicationModel>
 let appInfoKey = "appInfo"
 let mouseCountKey = "mouseCountKey"
 let autoStartKey = "AutoStartKey"
+let loginItemIdentifier = "com.murphy.KeyboardCounter.helper"
 
 class FKeyboardViewModel: NSObject {
     
@@ -194,15 +195,50 @@ class FKeyboardViewModel: NSObject {
     
     //MARK: OPEN
     func changeAutoLaunchState(state: Bool, complate: (_ result: Bool) -> ()) {
-        let launcherAppIdentifier = "com.murphy.KeyboardCounter.helper"
-        let result = SMLoginItemSetEnabled(launcherAppIdentifier as CFString, state)
-        if result {
-            autoLaunch = state
-            UserDefaults.standard.setValue(state, forKey: autoStartKey)
+        if #available(macOS 13.0, *) {
+            state ? addLoginItem(complate: complate) : removeLoginItem(complate: complate)
+        } else {
+            let result = SMLoginItemSetEnabled(loginItemIdentifier as CFString, state)
+            if result {
+                saveLoginAutoLaunchState(state: state)
+            }
+            complate(result)
         }
-        complate(result)
     }
     
+    @available(macOS 13.0, *)
+    private func addLoginItem(complate: (_ result: Bool) -> ()) {
+        do {
+            try loginItem().register()
+            saveLoginAutoLaunchState(state: true)
+            complate(true)
+        } catch {
+            print(error)
+            complate(false)
+        }
+    }
+    
+    @available(macOS 13.0, *)
+    private func removeLoginItem(complate: (_ result: Bool) -> ()) {
+        do {
+            try loginItem().unregister()
+            saveLoginAutoLaunchState(state: false)
+            complate(true)
+        } catch {
+            print(error)
+            complate(false)
+        }
+    }
+    
+    private func saveLoginAutoLaunchState(state: Bool) {
+        autoLaunch = state
+        UserDefaults.standard.setValue(state, forKey: autoStartKey)
+    }
+    
+    @available(macOS 13.0, *)
+    private func loginItem() -> SMAppService {
+        return SMAppService.loginItem(identifier: loginItemIdentifier)
+    }
     func saveDayData() {
         saveData()
     }
