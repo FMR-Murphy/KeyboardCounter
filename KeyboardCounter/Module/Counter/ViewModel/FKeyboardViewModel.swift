@@ -66,8 +66,12 @@ class FKeyboardViewModel: NSObject {
     private func bindAction() {
         
         let opts = NSDictionary(object: true,forKey: kAXTrustedCheckOptionPrompt.takeUnretainedValue() as NSString) as CFDictionary
-        if !AXIsProcessTrustedWithOptions(opts) {
-            print("需要开启辅助功能权限")
+        
+        if !AXIsProcessTrusted() {
+            // 未申请权限
+            if !AXIsProcessTrustedWithOptions(opts) {
+                print("需要开启辅助功能权限")
+            }
         }
         
         let workspace = NSWorkspace.shared
@@ -84,7 +88,6 @@ class FKeyboardViewModel: NSObject {
                 
             }
         }
-        
         
         Observable<Int>.interval(RxTimeInterval.seconds(1), scheduler: MainScheduler.asyncInstance).subscribe {[weak self] (value) in
 

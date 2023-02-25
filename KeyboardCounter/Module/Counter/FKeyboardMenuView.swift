@@ -106,9 +106,10 @@ class FKeyboardMenuView: NSObject, NSMenuDelegate {
     
     //MARK: action
     @objc func autoLaunchItemClick(_ sender: NSMenuItem) {
-        let open = sender.state != .on
-        
+        var open = sender.state != .on
+        print(sender.state)
         viewModel.changeAutoLaunchState(state: open) { (result) in
+            autoItem.state = open ? .on : .off
             print("\(open ? "添加" : "移除")登录项\(result ? "成功" : "失败")")
         }
     }
